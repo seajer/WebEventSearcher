@@ -9,7 +9,7 @@ import ua.gmail.project.entity.EventType;
 public interface EventTypeService {
 	void insertEventType(String typeName);
 	
-List<EventType> getAllEventTypes();
+	List<EventType> getAllEventTypes();
 	
 	EventType getEventTypeByTypeName(String typeName);
 
