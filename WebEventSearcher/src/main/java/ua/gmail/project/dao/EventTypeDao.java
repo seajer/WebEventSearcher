@@ -5,15 +5,8 @@ import java.util.List;
 import ua.gmail.project.entity.EventType;
 
 
-public interface EventTypeDao {
-
-	void insertEventType(EventType eventType);
-	
-	List<EventType> findAll();
+public interface EventTypeDao extends EntityDAO<EventType, Integer>{
 	
 	EventType findByEventTypeName(String typeName);
-	
-	//TODO: Writing remove methods and so on!
-	
 	
 }

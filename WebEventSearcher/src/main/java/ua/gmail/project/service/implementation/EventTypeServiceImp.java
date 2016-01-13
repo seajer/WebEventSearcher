@@ -17,7 +17,7 @@ public class EventTypeServiceImp implements EventTypeService{
 	public void insertEventType(String typeName) {
 		if(typeName != null){
 			EventType eventType = new EventType(typeName);
-			eventTypeDao.insertEventType(eventType);
+			eventTypeDao.add(eventType);
 		}else{
 			System.out.println("Name of EventType is empty.");
 		}
@@ -26,7 +26,7 @@ public class EventTypeServiceImp implements EventTypeService{
 	
 
 	public List<EventType> getAllEventTypes() {
-		return eventTypeDao.findAll();
+		return eventTypeDao.findAll(EventType.class);
 	}
 
 	public EventType getEventTypeByTypeName(String typeName) {

@@ -28,8 +28,8 @@ public class Event {
 //	@OneToOne
 //	private Description description;
 //	
-//	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-//	private location eventLocation;
+	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
+	private Location eventLocation;
 //	
 //	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
 //	private Type eventType;
