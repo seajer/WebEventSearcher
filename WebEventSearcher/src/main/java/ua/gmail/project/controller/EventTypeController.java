@@ -23,13 +23,13 @@ public class EventTypeController {
 	public String getEventTypes (Model model){
 		List<EventType> allEventTypes = eventTypeService.getAllEventTypes();
 		model.addAttribute("eventTypes", allEventTypes);
-		return "eventTypes";
+		return "eventType-all";
 	}
 		
 		
 	@RequestMapping(value = "/createNewEventType")
 	public String createEventTypePage(){
-		return "newEventType";
+		return "eventType-new";
 	}
 	
 	@RequestMapping(value = "/showAllEventTypes", method = RequestMethod.POST)
