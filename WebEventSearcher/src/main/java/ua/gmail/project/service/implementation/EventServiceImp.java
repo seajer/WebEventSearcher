@@ -8,12 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.gmail.project.dao.EntityDAO;
 import ua.gmail.project.entity.Event;
+import ua.gmail.project.service.EventTypeService;
 
 @Service
-public class EventServiceImp {
+public class EventServiceImp implements EventService {
 	
 	@Autowired
-	private EntityDAO eventDao;
+	private EventDAO eventDao;
 	
 	@Transactional
 	public void add(Event event){

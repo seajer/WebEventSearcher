@@ -1,7 +1,7 @@
 @CHARSET "UTF-8";
 
-.table-authors{
-	font-family: fantasy;
-	background-color: aqua;
+.table-eventType{
+	font-family: arial;
+	background-color: grey;
 	border: medium;
 }

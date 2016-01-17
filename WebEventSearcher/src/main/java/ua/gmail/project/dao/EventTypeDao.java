@@ -1,6 +1,5 @@
 package ua.gmail.project.dao;
 
-import java.util.List;
 
 import ua.gmail.project.entity.EventType;
 

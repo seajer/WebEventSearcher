@@ -4,7 +4,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
        
 <tiles-definitions>
-	<definition name = "base.definition" template = "vievs/tiles/Layout.jsp">
+	<definition name = "base.definition" template = "views/tiles/Layout.jsp">
 		<put-attribute name="header" value="/views/tiles/header.jsp"></put-attribute>
 		<put-attribute name="footer" value="/views/tiles/footer.jsp"></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
@@ -14,7 +14,7 @@
 	<definition name="eventType-*" extends="base.definition">
 		<!-- <put-attribute name="menu" value="/views/eventType/mainMenu.jsp"></put-attribute> -->
 		<put-attribute name="body" value="/views/eventType/{1}.jsp"></put-attribute>
-		<put-attribute name="title" value="Manager {1}"></put-attribute>
+		<!-- <put-attribute name="title" value="Manager {1}"></put-attribute> -->
 	</definition>
 	
 </tiles-definitions>
