@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ua.gmail.project.dao.EntityDAO;
+import ua.gmail.project.dao.EventDAO;
 import ua.gmail.project.entity.Event;
 import ua.gmail.project.service.EventService;
 
@@ -39,7 +40,7 @@ public class EventServiceImp implements EventService {
 	}
 	
 	public List<Event> findAll(){
-		return eventDao.findAll(Event.class);
+		return eventDao.findAllEvents(Event.class);
 	}
 	
 }
