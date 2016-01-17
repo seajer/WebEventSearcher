@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.gmail.project.dao.EntityDAO;
 import ua.gmail.project.entity.Event;
-import ua.gmail.project.service.EventTypeService;
+import ua.gmail.project.service.EventService;
+
 
 @Service
 public class EventServiceImp implements EventService {
