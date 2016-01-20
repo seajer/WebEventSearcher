@@ -39,8 +39,9 @@ public class EventServiceImp implements EventService {
 		}
 	}
 	
+	@Transactional
 	public List<Event> findAll(){
-		return eventDao.findAllEvents(Event.class);
+		return eventDao.findAll(Event.class);
 	}
 	
 }

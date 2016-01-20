@@ -4,12 +4,16 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
        
 <tiles-definitions>
-	<definition name = "base.definition" template = "views/tiles/Layout.jsp">
+	<definition name = "base.definition" template = "views/tiles/layout.jsp">
 		<put-attribute name="header" value="/views/tiles/header.jsp"></put-attribute>
 		<put-attribute name="footer" value="/views/tiles/footer.jsp"></put-attribute>
 		<put-attribute name="body" value=""></put-attribute>
 	</definition>
 
+	<definition name="home" extends="base.definition">
+		<put-attribute name="body"  value="/views/home.jsp"></put-attribute>
+		<put-attribute name="title" value="Home"></put-attribute>
+	</definition>
 
 	<definition name="eventType-*" extends="base.definition">
 		<!-- <put-attribute name="menu" value="/views/eventType/mainMenu.jsp"></put-attribute> -->
