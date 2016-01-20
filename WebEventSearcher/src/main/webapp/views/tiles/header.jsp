@@ -6,7 +6,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<h2>Event Searcher</h2>
+<body background="resources/img/header_image.jpg">
+
+<div id="header">
+
+<div id="logo"><p><b>EVENT</b> Searcher</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<span>inspired by allStarsTeam</span>
+</div>
+
+</div>
 </body>
 </html>

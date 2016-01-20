@@ -7,7 +7,8 @@
 <title>EventSearcher Home</title>
 </head>
 <body>
-	<h2>Home</h2>
- 	<a href="showAllEventTypes">Show EventTypes</a>
+		<a href="showAllEvents">Look for Events</a>
+	 	<a href="showAllEventTypes">Look for types of Events</a>
+	 	<a href="showAllEventLocations">Look for locations of Events</a>
 </body>
 </html>

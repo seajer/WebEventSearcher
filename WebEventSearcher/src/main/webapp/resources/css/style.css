@@ -1,15 +1,66 @@
 @CHARSET "UTF-8";
 
 .table-eventType{
-	font-family: arial;
+	font-family: Tahoma;
 	background-color: grey;
 	border: medium;
 }
 
+#header
+{
+position: relative;
+color:#ccddff;
+height: 341px; width: 1024px;
+margin: 0px auto; padding-top: 30px;
+font-family: Tahoma;
+text-shadow: 2px 2px 5px grey;
+text-align: center;
+}
+
+#logo
+{
+margin-top: 40px;
+text-align: center;
+}
+
+#logo p
+{
+font-size: 30px;
+text-align: center;
+}
+
+#logo span
+{
+font-size: 15px;
+line-height: 30px;
+text-align: center;
+}
+
+body
+{
+margin: 0px auto;
+height: 640px; width: 1024px;
+background-repeat: no-repeat;
+background-position: top;
+background-color:#262626; color: #aeaeae;
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 13px; line-height: 18px;
+}
+
+home
+{
+font-family: Tahoma;
+text-shadow: 2px 2px 5px grey;
+text-align: center;
+}
+
 #footer {
-	width: 100%;
-	padding: 50px;
+	position:fixed;
+	bottom:0;
+	width: 1024px;
+	padding: 20px;
 	text-align: center;
+	text-shadow: 2px 2px #ff0000;
 	color: #00cc66
 }
 
