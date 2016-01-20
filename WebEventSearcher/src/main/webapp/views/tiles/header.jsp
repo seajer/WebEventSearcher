@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>HEADER</h2>
+<h2>Event Searcher</h2>
 </body>
 </html>

@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h4>FOOTER</h4>
+		<div id="footer">
+		Copyright © 2016 <a href="https://www.java.com/en/download/">EventSearcher v0.1</a> | coded by allStarsTeam
+       </div>
 </body>
 </html>

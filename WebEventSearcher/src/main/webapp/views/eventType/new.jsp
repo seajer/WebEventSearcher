@@ -8,8 +8,8 @@
 
 <form:form action="createEventType" method="post"
 	modelAttribute="eventTypeObject">
-	typeName
-	<form:label path="typeName">typeName</form:label>
+	
+	<form:label path="typeName">Додати назву типу події</form:label>
 	<form:input path="typeName" />
 	<input type="submit" value="Save EventType"/>
 </form:form>

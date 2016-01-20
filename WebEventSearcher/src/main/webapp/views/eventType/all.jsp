@@ -3,12 +3,12 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%-- <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%> --%>
-Типи Подій
-<h3>Event Types:</h3>
+
+<h3>Типи подій:</h3>
 <table class="table-EventType">
 	<thead>
 		<tr>
-			<th>typeName</th>
+			<th>Назва типу</th>
 		</tr>
 	</thead>
 	<tbody>
