@@ -14,7 +14,7 @@
 	modelAttribute="eventTypeObject">
 	
 	 <form action="editEventType" method="post" class="formEdit">
-       <input name="idEventType" class="edit" value="${eventType.id_eventType}">
+       <input name="idEventType" class="edit" value="${eventType.typeName_eventType}">
       </form>
 	
 	<form:label path="typeName"></form:label>

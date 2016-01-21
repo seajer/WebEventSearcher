@@ -7,8 +7,51 @@
 <title>EventSearcher Home</title>
 </head>
 <body>
-		<a href="showAllEvents">Look for Events</a>
-	 	<a href="showAllEventTypes">Look for Types</a>
-	 	<a href="showAllEventLocations">Look for Locations</a>
+
+ <!-- <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Look for Events</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="showAllEvents">Show All Events</a>
+  </div>
+  </div> -->
+  
+  
+  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Look for Types</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="showAllEventTypes">Show All Types</a>
+  </div>
+  </div>
+  
+ <!--   <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Look for locations</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="showAllEventLocations">Show All Locations</a>
+  </div>
+  </div> -->
+  
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>

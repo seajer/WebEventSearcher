@@ -5,17 +5,28 @@
 	prefix="sec"%> --%>
 	
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EventSearcher</title>
 </head>
+
 <body>
 
-<h3>Типи подій:</h3>
+ <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Types</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="createNewEventType">Add</a>
+    <a href="editOldEventType">Edit</a>
+    <a href="deleteOldEventType">Delete</a>
+  </div>
+</div>
+
 <table class="table-EventType">
+
 	<thead>
 		<tr>
-			<th>Назва типу</th>
+			<th>NAME:</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -29,8 +40,28 @@
 <!-- <sec:authorize access="hasRole('ADMIN')">
 	<a href="createNewEventType">Add new type of Event</a>
 </sec:authorize> -->
-<a href="createNewEventType">Add new type of Event</a>
-<a href="editOldEventType">Edit existing type of Event</a>
-<a href="deleteOldEventType">Delete type of Event</a>
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>

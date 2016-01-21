@@ -10,7 +10,9 @@
 	href=<c:url value="/resources/css/style.css"></c:url>>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title><tiles:getAsString name="title"></tiles:getAsString></title>
+
 </head>
+
 <body>
 	<div>
 		<tiles:insertAttribute name="header"></tiles:insertAttribute>
@@ -22,4 +24,5 @@
 		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 	</div>
 </body>
+
 </html>
