@@ -11,7 +11,7 @@
 position: relative;
 color:#ccddff;
 height: 341px; width: 1024px;
-margin: 0px auto; padding-top: 30px;
+margin: 0px auto; padding-top: 3px;
 font-family: Tahoma;
 text-shadow: 2px 2px 5px grey;
 text-align: center;
@@ -52,6 +52,37 @@ home
 font-family: Tahoma;
 text-shadow: 2px 2px 5px grey;
 text-align: center;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+#nav ul li {
+    float: left;
+}
+
+
+#nav ul li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#nav ul li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+#nav ul li a.active {
+    color: white;
+    background-color: #4CAF50;
 }
 
 #footer {

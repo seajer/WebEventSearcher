@@ -3,19 +3,82 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%-- <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%> --%>
-Типи Подій
-<h3>Event Types:</h3>
+	
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EventSearcher</title>
+</head>
+
+<body>
+
+
+  <div id="nav">
+  	<ul>
+  		<li><a href="/">Home</a></li>
+  		<li><a class="active" href="showAllEvents">Look for Events</a></li>
+	 	<li><a href="showAllEventTypes">Look for types of Events</a></li>
+	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
+	 	  <ul style="float:right; list-style-type:none;">
+    		<li><a href="#">About</a></li>
+    		<li><a href="#">Login</a></li>
+  		</ul>
+	</ul>
+  </div>
+
+
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Events</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="createNewEventType">Add</a>
+    <a href="editOldEventType">Edit</a>
+    <a href="deleteOldEventType">Delete</a>
+  </div>
+</div>
+
 <table class="table-Event">
+
 	<thead>
 		<tr>
-			<th>typeName</th>
+			<th> </th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="event" items="${event}">
+		<c:forEach var="event" items="${events}">
 			<tr>
-				<td>${event.typeName}</td>
+				<td>${event.name}</td>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>
+<!-- <sec:authorize access="hasRole('ADMIN')">
+	<a href="createNewEventType">Add new type of Event</a>
+</sec:authorize> -->
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+
+</body>
+</html>

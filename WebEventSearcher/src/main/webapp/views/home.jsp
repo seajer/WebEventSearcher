@@ -8,50 +8,19 @@
 </head>
 <body>
 
- <!-- <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Look for Events</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="showAllEvents">Show All Events</a>
-  </div>
-  </div> -->
-  
-  
-  <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Look for Types</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="showAllEventTypes">Show All Types</a>
-  </div>
+  <div id="nav">
+  	<ul>
+  		<li><a class="active" href="/">Home</a></li>
+  		<li><a href="showAllEvents">Look for Events</a></li>
+	 	<li><a href="showAllEventTypes">Look for types of Events</a></li>
+	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
+		  <ul style="float:right; list-style-type:none;">
+    		<li><a href="#">About</a></li>
+    		<li><a href="#">Login</a></li>
+  		</ul>
+	</ul>
   </div>
   
- <!--   <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Look for locations</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a href="showAllEventLocations">Show All Locations</a>
-  </div>
-  </div> -->
-  
-
-<script>
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 
 </body>
 </html>
