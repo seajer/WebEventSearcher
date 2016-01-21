@@ -19,10 +19,38 @@ public class EventTypeDaoImp extends EntityDAOAbstract<EventType, Integer> imple
 @PersistenceContext(unitName = "Primary")
 private EntityManager entityManager;
 
+
+				
 	@Transactional
-	public EventType findByEventTypeName(String typeName) {
-		return entityManager.createNamedQuery("EventType.findByEventTypeName", EventType.class)
+	public void addEventType(EventType eventType) {
+		entityManager.persist(eventType);
+	
+	}
+	@Transactional
+	public void updateEventType(EventType eventType) {
+		entityManager.merge(eventType);
+	}
+	@Transactional
+	public void removeEventType(EventType eventType) {
+		entityManager.remove(eventType);
+	
+	}
+
+	@Transactional
+	public EventType findByName(String typeName) {
+		return entityManager.createNamedQuery("EventType.findByName", EventType.class)
 				.setParameter("typeName", typeName).setMaxResults(1).getSingleResult();
 	}
+	@Transactional
+	public EventType findById(int id) {
+		return entityManager.find(EventType.class, id);
+	}
+
+	@Transactional
+	public List<EventType> findAllEventTypes() {
+		return entityManager.createQuery("from EventType", EventType.class).getResultList();
+	}
+	
+	
 	
 }

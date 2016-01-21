@@ -9,13 +9,28 @@
 </head>
 <body>
 
-<form:form action="createEventType" method="post"
+
+ <form:form action="editEventType" method="post"
 	modelAttribute="eventTypeObject">
+	
+	 <form action="editEventType" method="post" class="formEdit">
+       <input name="idEventType" class="edit" value="${eventType.id_eventType}">
+      </form>
 	
 	<form:label path="typeName"></form:label>
 	<form:input path="typeName" />
-	<input type="submit" value="Save Type"/>
+	<input type="submit" value="Save Changes"/>
 </form:form>
+
+
+
 
 </body>
 </html>
+
+
+
+
+      
+      
+     

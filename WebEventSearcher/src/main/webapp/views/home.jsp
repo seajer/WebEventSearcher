@@ -8,7 +8,7 @@
 </head>
 <body>
 		<a href="showAllEvents">Look for Events</a>
-	 	<a href="showAllEventTypes">Look for types of Events</a>
-	 	<a href="showAllEventLocations">Look for locations of Events</a>
+	 	<a href="showAllEventTypes">Look for Types</a>
+	 	<a href="showAllEventLocations">Look for Locations</a>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class EventTypeServiceImp implements EventTypeService{
 	private EventTypeDao eventTypeDao;
 
 	@Transactional
-	public void insertEventType(String typeName) {
+	public void addEventType(String typeName) {
 		if(typeName != null){
 			EventType eventType = new EventType(typeName);
 			eventTypeDao.add(eventType);
@@ -26,15 +26,31 @@ public class EventTypeServiceImp implements EventTypeService{
 		}
 		
 	}
-	
 	@Transactional
-	public List<EventType> getAllEventTypes() {
-		return eventTypeDao.findAll(EventType.class);
+	public void updateEventType(String typeName) {
+		EventType eventType = new EventType(typeName);
+		eventTypeDao.update(eventType);
+	}
+	@Transactional
+	public void removeEventType(EventType eventType) {
+		eventTypeDao.remove(eventType);
+		
 	}
 	
 	@Transactional
-	public EventType getEventTypeByTypeName(String typeName) {
-		return eventTypeDao.findByEventTypeName(typeName);
+	public EventType getEventTypeByName(String typeName) {
+		return eventTypeDao.findByName(typeName);
+	}
+
+
+	@Transactional
+	public EventType getEventTypeById(int id) {
+		return eventTypeDao.findById(id);
+	}
+
+	@Transactional
+	public List<EventType> getAllEventTypes() {
+		return eventTypeDao.findAll(EventType.class);
 	}
 
 }
