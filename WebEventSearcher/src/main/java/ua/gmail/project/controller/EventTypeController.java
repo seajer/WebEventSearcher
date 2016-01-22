@@ -35,15 +35,24 @@ public class EventTypeController {
 	}
 	
 	@RequestMapping(value = "/editOldEventType")
-	public String editEventTypePage(Model model){
-		model.addAttribute("eventTypeObject", new EventType());
-		return "eventType-edit";
+	public String editEventType(Model model,
+			@RequestParam(value="id") String id,
+			@RequestParam(value="operation") String operation){
+		EventType eventType = eventTypeService.getEventTypeById(Integer.parseInt(id));
+		if(operation == "edit"){
+			model.addAttribute("eventType", eventType);
+			return "eventType-edit";
+		}else{
+			eventTypeService.removeEventType(id);
+		}
+		return "redirect:/showAllEventTypes";
+		
 	}
 	
 	@RequestMapping(value = "/editEventType", method = RequestMethod.POST)
 	public String editEventType(
-			@ModelAttribute(value = "eventTypeObject") EventType eventType){
-		eventTypeService.updateEventType(eventType.getTypeName());
+			@ModelAttribute(value = "eventType") EventType eventType){
+		eventTypeService.updateEventType(eventType);
 		return "redirect:/showAllEventTypes";
 	}
 	
@@ -56,7 +65,7 @@ public class EventTypeController {
 	@RequestMapping(value = "/deleteEventType", method = RequestMethod.POST)
 	public String deleteEventType(
 			@ModelAttribute(value = "eventTypeObject") EventType eventType){
-		eventTypeService.removeEventType(eventType);
+		//eventTypeService.removeEventType(eventType);
 		return "redirect:/showAllEventTypes";
 	}
 		

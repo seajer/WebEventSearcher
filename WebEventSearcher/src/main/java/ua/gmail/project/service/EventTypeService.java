@@ -10,9 +10,9 @@ public interface EventTypeService {
 	
 	void addEventType(String typeName);
 	
-	void updateEventType (String typeName);
+	void updateEventType (EventType eventType);
 	
-	void removeEventType (EventType eventType);
+	void removeEventType (String id);
 	
 	EventType getEventTypeByName(String typeName);
 	

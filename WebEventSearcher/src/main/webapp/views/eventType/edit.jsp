@@ -10,16 +10,10 @@
 <body>
 
 
- <form:form action="editEventType" method="post"
-	modelAttribute="eventTypeObject">
-	
-	 <form action="editEventType" method="post" class="formEdit">
-       <input name="idEventType" class="edit" value="${eventType.typeName_eventType}">
-      </form>
-	
-	<form:label path="typeName"></form:label>
-	<form:input path="typeName" />
-	<input type="submit" value="Save Changes"/>
+ <form:form action="editEventType" method="post" modelAttribute="eventType">
+ 		<form:input path="id" type="hidden"/>
+		<form:input path="typeName"/>
+		<input type="submit" value="Save Changes"/>
 </form:form>
 
 

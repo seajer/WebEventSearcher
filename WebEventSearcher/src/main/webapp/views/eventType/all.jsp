@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- <%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%> --%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%> 
 	
 <html>
 
@@ -15,13 +16,13 @@
 
   <div id="nav">
   	<ul>
-  		<li><a href="/">Home</a></li>
+  		<li><a href="/SpringTiles">Home</a></li>
   		<li><a href="showAllEvents">Look for Events</a></li>
 	 	<li><a class="active" href="showAllEventTypes">Look for types of Events</a></li>
 	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
 	 	  <ul style="float:right; list-style-type:none;">
     		<li><a href="#">About</a></li>
-    		<li><a href="#">Login</a></li>
+    		<li><a href="login">Login</a></li>
   		</ul>
 	</ul>
   </div>
@@ -46,6 +47,17 @@
 		<c:forEach var="eventType" items="${eventTypes}">
 			<tr>
 				<td>${eventType.typeName}</td>
+				
+					<form:form action="editOldEventType" method="post">
+						<td>
+							<input type="hidden" name="id" value="${eventType.id}">
+							<sec:authorize access="hasRole('ADMIN')">
+								<button type="submit" name="operation" value="edit">Edit</button>
+								<button type="submit" name="operation" value="delete">Delete</button>
+							</sec:authorize>
+						</td>
+					</form:form>	
+				
 			</tr>
 		</c:forEach>
 	</tbody>

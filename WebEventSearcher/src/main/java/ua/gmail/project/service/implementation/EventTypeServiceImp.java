@@ -27,12 +27,12 @@ public class EventTypeServiceImp implements EventTypeService{
 		
 	}
 	@Transactional
-	public void updateEventType(String typeName) {
-		EventType eventType = new EventType(typeName);
+	public void updateEventType(EventType eventType) {
 		eventTypeDao.update(eventType);
 	}
 	@Transactional
-	public void removeEventType(EventType eventType) {
+	public void removeEventType(String id) {
+		EventType eventType = eventTypeDao.findById(Integer.parseInt(id));
 		eventTypeDao.remove(eventType);
 		
 	}
