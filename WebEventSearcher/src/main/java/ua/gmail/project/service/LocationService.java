@@ -12,4 +12,8 @@ public interface LocationService {
 		
 	public List<Location> findAll();
 
+	public Location findById(String id);
+
+	public void remove(String id);
+
 }

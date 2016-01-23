@@ -36,7 +36,7 @@
   		<li><a class="active" href="/SpringTiles">Home</a></li>
   		<li><a href="showAllEvents">Look for Events</a></li>
 	 	<li><a href="showAllEventTypes">Look for types of Events</a></li>
-	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
+	 	<li><a href="showAllLocations">Look for locations of Events</a></li>
 		  <ul style="float:right; list-style-type:none;">
     		<li><a href="">About</a></li>
     		<li><a href="login">Login</a></li>
