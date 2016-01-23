@@ -8,7 +8,7 @@
 
 <form:form action="createEvent" method="post"
 	modelAttribute="eventObject">
-	typeName
+	
 	<form:label path="eventName">eventName</form:label>
 	<form:label path="eventPrice">eventPrice</form:label>
 	<form:label path="eventType">eventType</form:label>

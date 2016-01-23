@@ -16,7 +16,6 @@
 	</definition>
 
 	<definition name="eventType-*" extends="base.definition">
-		<!-- <put-attribute name="menu" value="/views/eventType/mainMenu.jsp"></put-attribute> -->
 		<put-attribute name="body" value="/views/eventType/{1}.jsp"></put-attribute>
 		<put-attribute name="title" value="EventType {1}"></put-attribute>
 	</definition>

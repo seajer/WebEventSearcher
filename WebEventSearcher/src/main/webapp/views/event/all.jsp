@@ -14,19 +14,6 @@
 <body>
 
 
-  <div id="nav">
-  	<ul>
-  		<li><a href="/">Home</a></li>
-  		<li><a class="active" href="showAllEvents">Look for Events</a></li>
-	 	<li><a href="showAllEventTypes">Look for types of Events</a></li>
-	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
-	 	  <ul style="float:right; list-style-type:none;">
-    		<li><a href="#">About</a></li>
-    		<li><a href="#">Login</a></li>
-  		</ul>
-	</ul>
-  </div>
-
 
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Events</button>
