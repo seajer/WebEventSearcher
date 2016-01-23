@@ -39,7 +39,7 @@ public class EventTypeController {
 			@RequestParam(value="id") String id,
 			@RequestParam(value="operation") String operation){
 		EventType eventType = eventTypeService.getEventTypeById(Integer.parseInt(id));
-		if(operation == "edit"){
+		if(operation.equals("edit")){
 			model.addAttribute("eventType", eventType);
 			return "eventType-edit";
 		}else{

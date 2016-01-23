@@ -33,7 +33,7 @@
 
 <div id="nav">
   	<ul>
-  		<li><a class="active" href="/">Home</a></li>
+  		<li><a class="active" href="EventSearcher">Home</a></li>
   		<li><a href="showAllEvents">Look for Events</a></li>
 	 	<li><a href="showAllEventTypes">Look for types of Events</a></li>
 	 	<li><a href="showAllEventLocations">Look for locations of Events</a></li>
