@@ -52,8 +52,8 @@
 						<td>
 							<input type="hidden" name="id" value="${eventType.id}">
 							<sec:authorize access="hasRole('ADMIN')">
-								<button type="submit" name="operation" value="edit">Edit</button>
-								<button type="submit" name="operation" value="delete">Delete</button>
+								<input type="submit" name="operation" value="edit" />
+								<input type="submit" name="operation" value="delete" />
 							</sec:authorize>
 						</td>
 					</form:form>	
