@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ua.gmail.project.entity.Event;
 import ua.gmail.project.entity.EventType;
 import ua.gmail.project.entity.Location;
 import ua.gmail.project.service.EventTypeService;
-
-
 
 @Controller
 public class EventTypeController {
@@ -21,10 +20,15 @@ public class EventTypeController {
 	@Autowired
 	private EventTypeService eventTypeService; 
 	
+	@RequestMapping(value = "/types")
+	public String getEventTypes (Model model){
+		model.addAttribute("types", eventTypeService.getAllEventTypes());
+		return "type-all";
+	}
 	
 	@RequestMapping(value = "/newType")
 	public String newType(Model model){
-		model.addAttribute("types", new EventType());
+		model.addAttribute("type", new EventType());
 		return "type-new";
 	}
 	
@@ -34,7 +38,7 @@ public class EventTypeController {
 		eventTypeService.updateEventType(eventType);
 		return "redirect:/types";
 	}
-		
+	
 	 @RequestMapping(value="/editType")
 	public String editType(Model model, @RequestParam(value="id") String id){
 		EventType eventType = eventTypeService.getEventTypeById(Integer.parseInt(id));
@@ -53,12 +57,6 @@ public class EventTypeController {
 	public String deleteType(@RequestParam(value="id") String id){
 		eventTypeService.removeEventType(id);
 		return "redirect:/types";
-	}
-		
-	@RequestMapping(value = "/types")
-	public String getEventTypes (Model model){
-		model.addAttribute("types", eventTypeService.getAllEventTypes());
-		return "type-all";
 	}
 	
 }

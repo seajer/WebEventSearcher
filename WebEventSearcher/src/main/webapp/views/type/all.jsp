@@ -5,7 +5,6 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%> 
 
-	
 <html>
 
 <head>
@@ -19,7 +18,6 @@
   <button onclick="myFunction()" class="dropbtn">Types</button>
   <div id="myDropdown" class="dropdown-content">
     <a href="newType">Add</a>
-
   </div>
 </div>
 

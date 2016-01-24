@@ -5,7 +5,6 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="sec"%> 
 
-	
 <html>
 
 <head>
@@ -23,7 +22,6 @@
 </div>
 
 <table>
-
 	<thead>
 		<tr>
 			<th>Name</th>

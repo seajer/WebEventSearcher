@@ -2,31 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
+<html>
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EventSearcher</title>
 </head>
 
-<form:form action="createEvent" method="post"
-	modelAttribute="eventObject">
-	
-	<form:label path="name">eventName</form:label>
-	<form:label path="eventStart">eventStart</form:label>
-	
-	<form:label path="eventEnd">eventEnd</form:label>
-	
-	<form:label path="price">eventPrice</form:label>
-	
-	<%-- <form:label path="eventType">eventType</form:label> --%>
-	<form:select path="eventType">
-		<form:option value="" label="...." />
-        <form:options items="${types}" />
-     </form:select>
-     
-	<%-- <form:label path="eventLocation">eventLocation</form:label> --%>
-	<form:select path="eventLocation">
-		<form:option value="" label="...." />
-        <form:options items="${locations}" />
-     </form:select>
-	<form:input path="event" />
+<body>
+
+<form:form action="createEvent" method="post" modelAttribute="event">
+	Name<form:input path="name" title="Name"/>
+	Start<form:input path="eventStart" title="Start" />
+	End<form:input path="eventEnd" title="Start" />
+	Price<form:input path="price" title="Price" />
+	<%-- Думаю тут ще потрібно зробити чекбокси або радіобатонси для вибори типу і локації з вже існуючих,
+	а якщо нові, то мало б переадресовувати на сторінку типів і окацій відповідно, але для аочатку і першого достатньо!--%>
 	<input type="submit" value="Save Event"/>
 </form:form>
+
+</body>
+</html>

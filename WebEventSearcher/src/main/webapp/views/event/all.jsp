@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- <%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%> --%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%> 
 	
 <html>
 
@@ -13,8 +14,6 @@
 
 <body>
 
-
-
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Events</button>
   <div id="myDropdown" class="dropdown-content">
@@ -22,16 +21,39 @@
   </div>
 </div>
 
-<table class="table-Event">
+<table>
 	<thead>
 		<tr>
-			<th>Event name</th>
+			<th>Name</th>
+			<th>Start</th>
+			<th>End</th>
+			<th>Price</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach var="event" items="${events}">
 			<tr>
 				<td>${event.name}</td>
+				<td>${event.eventStart}</td>
+				<td>${event.eventEnd}</td>
+				<td>${event.price}</td>
+				
+					<form:form action="editEvent" method="post">
+						<td>
+							<input type="hidden" name="id" value="${event.id}">
+							<sec:authorize access="hasRole('ADMIN')">
+								<input type="submit" name="operation" value="edit" />
+							</sec:authorize>
+						</td>
+					</form:form>	
+					<form:form action="deleteEvent" method="post">
+						<td>
+							<input type="hidden" name="id" value="${event.id}">
+							<sec:authorize access="hasRole('ADMIN')">
+								<input type="submit" name="operation" value="delete" />
+							</sec:authorize>
+						</td>
+					</form:form>
 			</tr>
 		</c:forEach>
 	</tbody>

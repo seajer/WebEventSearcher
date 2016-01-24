@@ -9,16 +9,12 @@
 </head>
 <body>
 
-
 <form:form action="updateLocation" method="post" modelAttribute="location">
 	<form:input path="id" type="hidden"/>
 	<form:input path="name" />
 	<form:input path="address" />
 	<input type="submit" value="Save changes"/>
 </form:form>
-
-
-
 
 </body>
 </html>

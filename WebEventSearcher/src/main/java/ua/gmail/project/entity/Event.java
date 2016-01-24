@@ -19,6 +19,20 @@ public class Event {
 	
 	private String name;
 	
+	private Date eventStart;
+	
+	private Date eventEnd;
+	
+	private int price;
+	
+	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
+	private Location eventLocation;
+	
+	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
+	private EventType eventType;
+
+	
+	
 	public Location getEventLocation() {
 		return eventLocation;
 	}
@@ -35,20 +49,12 @@ public class Event {
 		this.eventType = eventType;
 	}
 
-	private Date eventStart;
-	
-	private Date eventEnd;
-	
-	private int price;
+
 	
 //	@OneToOne
 //	private Description description;
 //	
-	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-	private Location eventLocation;
-//	
-	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-	private EventType eventType;
+
 	
 	public Event(){
 		
