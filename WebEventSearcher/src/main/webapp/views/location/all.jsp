@@ -16,35 +16,42 @@
 <body>
 
 <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Types</button>
+  <button onclick="myFunction()" class="dropbtn">Locations</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="createNewEventType">Add</a>
-    <a href="editOldEventType">Edit</a>
-    <a href="deleteOldEventType">Delete</a>
+    <a href="newLocation">Add</a>
   </div>
 </div>
 
-<table class="table-EventType">
+<table>
 
 	<thead>
 		<tr>
-			<th> </th>
+			<th>Name</th>
+			<th>Adress</th>
 		</tr>
 	</thead>
 	<tbody>
-		<c:forEach var="eventType" items="${eventTypes}">
+		<c:forEach var="location" items="${locations}">
 			<tr>
-				<td>${eventType.typeName}</td>
+				<td>${location.name}</td>
+				<td>${location.address}</td>
 				
-					<form:form action="editOldEventType" method="post">
+					<form:form action="editLocation" method="post">
 						<td>
-							<input type="hidden" name="id" value="${eventType.id}">
+							<input type="hidden" name="id" value="${location.id}">
 							<sec:authorize access="hasRole('ADMIN')">
-								<button type="submit" name="operation" value="edit">Edit</button>
-								<button type="submit" name="operation" value="delete">Delete</button>
+								<input type="submit" name="operation" value="edit" />
 							</sec:authorize>
 						</td>
 					</form:form>	
+					<form:form action="deleteLocation" method="post">
+						<td>
+							<input type="hidden" name="id" value="${location.id}">
+							<sec:authorize access="hasRole('ADMIN')">
+								<input type="submit" name="operation" value="delete" />
+							</sec:authorize>
+						</td>
+					</form:form>
 				
 			</tr>
 		</c:forEach>

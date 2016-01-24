@@ -10,7 +10,7 @@
 <body>
 
 
- <form:form action="editEventType" method="post" modelAttribute="eventType">
+ <form:form action="updateType" method="post" modelAttribute="type">
  		<form:input path="id" type="hidden"/>
 		<form:input path="typeName"/>
 		<input type="submit" value="Save Changes"/>

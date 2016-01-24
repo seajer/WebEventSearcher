@@ -19,19 +19,19 @@ public class EventController {
 	@Autowired
 	private EventService eventService;
 	
-	@RequestMapping(value = "/showAllEvents")
+	@RequestMapping(value = "/events")
 	public String getEvents(Model model){
 		List<Event> allEvents = eventService.findAll();
 		model.addAttribute("event", allEvents);
 		return "event-all";
 	}
 	
-	@RequestMapping(value = "/addNewEvent")
+	@RequestMapping(value = "/newEvent")
 	public String addEventPage(){
 		return "event-addNew";
 	}
 	
-	@RequestMapping(value = "/showAllEvents", method = RequestMethod.POST)
+	@RequestMapping(value = "/events", method = RequestMethod.POST)
 	public String addEvent(@RequestParam(value = "name") String name, @RequestParam(value = "price") Integer price,
 					@RequestParam(value = "dateStart") Date eventStart, @RequestParam(value = "eventEnd") Date eventEnd){
 		eventService.add(new Event(name, eventStart, eventEnd, price));

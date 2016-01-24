@@ -14,6 +14,6 @@
 		<input type="submit" value="Login">
 	</form>
 	
-	<a href="signIn">Sign in</a>
+	<button>Sign in</button>
 </body>
 </html>

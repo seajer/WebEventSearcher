@@ -7,16 +7,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EventSearcher</title>
 </head>
-
 <body>
 
-<form:form action="createEventType" method="post"
-	modelAttribute="eventTypeObject">
-	
-	<form:label path="typeName"></form:label>
-	<form:input path="typeName" />
-	<input type="submit" value="Save Type"/>
+
+<form:form action="updateLocation" method="post" modelAttribute="location">
+	<form:input path="id" type="hidden"/>
+	<form:input path="name" />
+	<form:input path="address" />
+	<input type="submit" value="Save changes"/>
 </form:form>
+
+
+
 
 </body>
 </html>
+
+
+
+
+      
+      
+     

@@ -15,14 +15,19 @@
 		<put-attribute name="title" value="Home"></put-attribute>
 	</definition>
 
-	<definition name="eventType-*" extends="base.definition">
-		<put-attribute name="body" value="/views/eventType/{1}.jsp"></put-attribute>
-		<put-attribute name="title" value="EventType {1}"></put-attribute>
+	<definition name="type-*" extends="base.definition">
+		<put-attribute name="body" value="/views/type/{1}.jsp"></put-attribute>
+		<put-attribute name="title" value="Type {1}"></put-attribute>
 	</definition>
 	
 	<definition name="event-*" extends="base.definition">
 		<put-attribute name="body"  value="/views/event/{1}.jsp"></put-attribute>
 		<put-attribute name="title" value="Event {1}"></put-attribute>
+	</definition>
+	
+	<definition name="location-*" extends="base.definition">
+		<put-attribute name="body"  value="/views/location/{1}.jsp"></put-attribute>
+		<put-attribute name="title" value="Location {1}"></put-attribute>
 	</definition>
 
 	<definition name="loginpage" extends="base.definition">

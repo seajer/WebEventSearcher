@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.gmail.project.entity.EventType;
+import ua.gmail.project.entity.Location;
 import ua.gmail.project.service.EventTypeService;
 
 
@@ -21,66 +22,43 @@ public class EventTypeController {
 	private EventTypeService eventTypeService; 
 	
 	
-	@RequestMapping(value = "/createNewEventType")
-	public String createEventTypePage(Model model){
-		model.addAttribute("eventTypeObject", new EventType());
-		return "eventType-new";
+	@RequestMapping(value = "/newType")
+	public String newType(Model model){
+		model.addAttribute("types", new EventType());
+		return "type-new";
 	}
 	
-	@RequestMapping(value = "/createEventType", method = RequestMethod.POST)
-	public String createEventType(
-			@ModelAttribute(value = "eventTypeObject") EventType eventType){
-		eventTypeService.addEventType(eventType.getTypeName());
-		return "redirect:/showAllEventTypes";
-	}
-	
-	@RequestMapping(value = "/editOldEventType")
-	public String editEventType(Model model,
-			@RequestParam(value="id") String id,
-			@RequestParam(value="operation") String operation){
-		EventType eventType = eventTypeService.getEventTypeById(Integer.parseInt(id));
-		if(operation.equals("edit")){
-			model.addAttribute("eventType", eventType);
-			return "eventType-edit";
-		}else{
-			eventTypeService.removeEventType(id);
-		}
-		return "redirect:/showAllEventTypes";
-		
-	}
-	
-	@RequestMapping(value = "/editEventType", method = RequestMethod.POST)
-	public String editEventType(
-			@ModelAttribute(value = "eventType") EventType eventType){
+	@RequestMapping(value = "/createType", method = RequestMethod.POST)
+	public String createType(
+			@ModelAttribute(value = "type") EventType eventType){
 		eventTypeService.updateEventType(eventType);
-		return "redirect:/showAllEventTypes";
-	}
-	
-	@RequestMapping(value = "/deleteOldEventType")
-	public String deleteEventTypePage(Model model){
-		model.addAttribute("eventTypeObject", new EventType());
-		return "eventType-delete";
-	}
-	
-	@RequestMapping(value = "/deleteEventType", method = RequestMethod.POST)
-	public String deleteEventType(
-			@ModelAttribute(value = "eventTypeObject") EventType eventType){
-		//eventTypeService.removeEventType(eventType);
-		return "redirect:/showAllEventTypes";
+		return "redirect:/types";
 	}
 		
-	@RequestMapping(value = "/showAllEventTypes")
+	 @RequestMapping(value="/editType")
+	public String editType(Model model, @RequestParam(value="id") String id){
+		EventType eventType = eventTypeService.getEventTypeById(Integer.parseInt(id));
+		model.addAttribute("type", eventType);
+		return "type-edit";
+	}
+
+	@RequestMapping(value = "/updateType")
+	public String updateType(
+			@ModelAttribute(value = "type") EventType eventType){
+		eventTypeService.updateEventType(eventType);
+		return "redirect:/types";
+	}
+	
+	@RequestMapping(value = "/deleteType", method = RequestMethod.POST)
+	public String deleteType(@RequestParam(value="id") String id){
+		eventTypeService.removeEventType(id);
+		return "redirect:/types";
+	}
+		
+	@RequestMapping(value = "/types")
 	public String getEventTypes (Model model){
-		List<EventType> allEventTypes = eventTypeService.getAllEventTypes();
-		model.addAttribute("eventTypes", allEventTypes);
-		return "eventType-all";
+		model.addAttribute("types", eventTypeService.getAllEventTypes());
+		return "type-all";
 	}
-		
-		
-
-	
-
-		
-
 	
 }
