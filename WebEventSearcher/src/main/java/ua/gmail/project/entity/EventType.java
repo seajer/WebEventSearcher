@@ -53,7 +53,7 @@ import javax.persistence.*;
 
 	@Override
 	public String toString() {
-		return "EventType [id=" + id + ", typeName=" + typeName + "]";
-	}
-
+		return typeName;
+		}
+	
 }

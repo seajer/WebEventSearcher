@@ -16,11 +16,11 @@
 	<form:input path="eventEnd" title="Start" />
 	<form:input path="price" title="Price" />
 	<form:select path="eventType">
-		<form:option label = "---Select---" value="NONE"/>
+		<%-- <form:option label = "---Select---" value="NONE"/> --%>
         <form:options items="${types}"/>
      	</form:select>
     <form:select path="location">
-       <form:option label = "---Select---" value="NONE"/>
+       <%-- <form:option label = "---Select---" value="NONE"/> --%>
        <form:options items="${locations}"/>
 		</form:select>	
 		<input type="submit" value="Save changes"/>
