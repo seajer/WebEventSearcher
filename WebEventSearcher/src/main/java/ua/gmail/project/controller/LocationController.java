@@ -43,7 +43,7 @@ public class LocationController {
 	}
 	
 	@RequestMapping(value="/deleteLocation")
-	public String createLocation(@RequestParam(value="id") String id){
+	public String deleteLocation(@RequestParam(value="id") String id){
 		locationService.remove(id);
 		return "redirect:/locations";
 	}

@@ -12,6 +12,8 @@ public interface EventService {
 	
 	public void delete (Event event);
 	
+	public Event findById(String id);
+	
 	public List<Event> findAll();
 	
 	

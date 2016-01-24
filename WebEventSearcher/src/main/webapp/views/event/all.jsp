@@ -18,17 +18,14 @@
 <div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">Events</button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="createNewEventType">Add</a>
-    <a href="editOldEventType">Edit</a>
-    <a href="deleteOldEventType">Delete</a>
+    <a href="newEvent">Add</a>
   </div>
 </div>
 
 <table class="table-Event">
-
 	<thead>
 		<tr>
-			<th> </th>
+			<th>Event name</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,9 +36,6 @@
 		</c:forEach>
 	</tbody>
 </table>
-<!-- <sec:authorize access="hasRole('ADMIN')">
-	<a href="createNewEventType">Add new type of Event</a>
-</sec:authorize> -->
 
 <script>
 

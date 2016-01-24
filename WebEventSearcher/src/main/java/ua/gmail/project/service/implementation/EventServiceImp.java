@@ -43,5 +43,11 @@ public class EventServiceImp implements EventService {
 	public List<Event> findAll(){
 		return eventDao.findAll(Event.class);
 	}
+
+	@Transactional
+	public Event findById(String id) {
+		return eventDao.findByKey(Event.class, Integer.parseInt(id));
+		
+	}
 	
 }

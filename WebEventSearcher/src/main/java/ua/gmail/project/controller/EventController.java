@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.gmail.project.entity.Event;
+import ua.gmail.project.entity.EventType;
+import ua.gmail.project.entity.Location;
 import ua.gmail.project.service.EventService;
 
 @Controller
@@ -22,19 +24,34 @@ public class EventController {
 	@RequestMapping(value = "/events")
 	public String getEvents(Model model){
 		List<Event> allEvents = eventService.findAll();
-		model.addAttribute("event", allEvents);
+		model.addAttribute("events", allEvents);
 		return "event-all";
 	}
 	
 	@RequestMapping(value = "/newEvent")
-	public String addEventPage(){
-		return "event-addNew";
+	public String addEventPage(Model model){
+		model.addAttribute("event", new Event());
+		return "event-new";
+	}
+	
+	@RequestMapping(value="/deleteEvent")
+	public String deleteEvent(@RequestParam (value = "id") String id){
+		eventService.delete(eventService.findById(id));
+		return "redirect:/events";
 	}
 	
 	@RequestMapping(value = "/events", method = RequestMethod.POST)
-	public String addEvent(@RequestParam(value = "name") String name, @RequestParam(value = "price") Integer price,
-					@RequestParam(value = "dateStart") Date eventStart, @RequestParam(value = "eventEnd") Date eventEnd){
-		eventService.add(new Event(name, eventStart, eventEnd, price));
+	public String createEvent(@RequestParam String name, @RequestParam Integer price,
+					@RequestParam Date eventStart, @RequestParam Date eventEnd,
+					@RequestParam Location location, @RequestParam EventType eventType){
+		Event newEvent = new Event();
+		newEvent.setName(name);
+		newEvent.setPrice(price);
+		newEvent.setEventStart(eventStart);
+		newEvent.setEventEnd(eventEnd);
+		newEvent.setEventLocation(location);
+		newEvent.setEventType(eventType);
+		eventService.add(newEvent);
 		return "redirect:/event-all";
 		
 	}
