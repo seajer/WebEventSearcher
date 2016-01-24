@@ -9,12 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-
-
+import javax.persistence.Table;
 
 
 @Entity
+@Table
 public class Location {
 	
 	@Id
@@ -22,17 +21,16 @@ public class Location {
 	private int id;
 	private String name;
 	private String address;
-	@OneToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy="eventLocation")
+	@OneToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY, mappedBy="location")
 	private List<Event> events;
+	
+	public Location() {
+	}
 	
 	public Location(String name, String address) {
 		super();
 		this.name = name;
 		this.address = address;
-	}
-
-	public Location() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getId() {

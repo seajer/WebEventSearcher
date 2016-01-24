@@ -9,9 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 //import javax.persistence.OneToOne;
 
 @Entity
+@Table
 public class Event {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,38 +28,12 @@ public class Event {
 	private int price;
 	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-	private Location eventLocation;
+	private Location location;
 	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
 	private EventType eventType;
 
-	
-	
-	public Location getEventLocation() {
-		return eventLocation;
-	}
-
-	public void setEventLocation(Location eventLocation) {
-		this.eventLocation = eventLocation;
-	}
-
-	public EventType getEventType() {
-		return eventType;
-	}
-
-	public void setEventType(EventType eventType) {
-		this.eventType = eventType;
-	}
-
-
-	
-//	@OneToOne
-//	private Description description;
-//	
-
-	
-	public Event(){
-		
+	public Event(){	
 	}
 
 	public Event(String name, Date eventStart, Date eventEnd, int price) {
@@ -68,10 +44,12 @@ public class Event {
 		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Event [name=" + name + ", eventStart=" + eventStart + ", eventEnd=" + eventEnd + ", price=" + price
-				+ "]";
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -105,15 +83,27 @@ public class Event {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public int getId() {
-		return id;
+	
+	public Location getLocation() {
+		return location;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
-	
-	
+
+	public EventType getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(EventType eventType) {
+		this.eventType = eventType;
+	}
+
+	@Override
+	public String toString() {
+		return "Event [name=" + name + ", eventStart=" + eventStart + ", eventEnd=" + eventEnd + ", price=" + price
+				+ "]";
+	}
 	
 }
