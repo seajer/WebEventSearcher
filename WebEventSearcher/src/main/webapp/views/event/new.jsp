@@ -34,20 +34,24 @@
 <body>
 
 <form:form action="createEvent" method="post" modelAttribute="event" enctype="multipart/form-data" >
-	Name<form:input path="name" title="Name"/>
-	Start<form:input path="eventStart" title="Start"  id="datepicker1"/>
-	End<form:input path="eventEnd" title="Start" id="datepicker2"/>
-	Price<form:input path="price" title="Price" /><br>
-	Type<form:select path="eventType">
-		<%-- <form:option label = "---Select---" value="NONE"/> --%>
-        <form:options items="${types}"/>
-     	</form:select>
+<br>
+	Name	<form:input path="name" title="Name"/><br>
+	<h6></h6>
+	Starts	<form:input path="eventStart" title="Start"  id="datepicker1"/><br>
+	<h6></h6>
+	Ends	<form:input path="eventEnd" title="Start" id="datepicker2"/><br>
+	<h6></h6>
+	Price	<form:input path="price" title="Price" /><br>
+	<h6></h6>
+	Type	<form:select path="eventType">
+        	<form:options items="${types}"/>	
+     		</form:select>
+    <br><h6></h6>
     Location<form:select path="location">
-       <%-- <form:option label = "---Select---" value="NONE"/> --%>
-       <form:options items="${locations}"/>
-		</form:select>
-	
-		<button type="submit">Save</button>
+       		<form:options items="${locations}"/>
+			</form:select>
+	<br><h6></h6>
+	<button type="submit">Save</button>	
 </form:form>
 
 </body>
