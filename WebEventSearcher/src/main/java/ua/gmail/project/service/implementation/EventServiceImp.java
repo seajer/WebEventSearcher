@@ -33,10 +33,9 @@ public class EventServiceImp implements EventService {
 	}
 	
 	@Transactional
-	public void delete (Event event){
-		if(event != null){
-			eventDao.remove(event);
-		}
+	public void delete (String id){
+		Event event = findById(id);
+		eventDao.remove(event);
 	}
 	
 	@Transactional

@@ -1,8 +1,5 @@
 package ua.gmail.project.controller;
 
-import java.util.Date;
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.gmail.project.entity.Event;
-import ua.gmail.project.entity.EventType;
-import ua.gmail.project.entity.Location;
 import ua.gmail.project.service.EventService;
 import ua.gmail.project.service.EventTypeService;
 import ua.gmail.project.service.LocationService;
@@ -71,7 +66,7 @@ public class EventController {
 	}
 	@RequestMapping(value="/deleteEvent")
 	public String deleteEvent(@RequestParam (value = "id") String id){
-		eventService.delete(eventService.findById(id));
+		eventService.delete(id);
 		return "redirect:/events";
 	}
 	

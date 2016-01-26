@@ -10,7 +10,7 @@ public interface EventService {
 	
 	public void update(Event event);
 	
-	public void delete (Event event);
+	public void delete (String id);
 	
 	public Event findById(String id);
 	
