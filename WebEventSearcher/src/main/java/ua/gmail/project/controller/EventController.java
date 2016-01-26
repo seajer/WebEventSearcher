@@ -55,6 +55,8 @@ public class EventController {
 	public String editEvent(Model model, @RequestParam(value="id") String id){
 		Event event = eventService.findById(id);
 		model.addAttribute("event", event);
+		model.addAttribute("locations", locationService.findAll());
+		model.addAttribute("types", eventTypeService.getAllEventTypes());
 		return "event-edit";
 	}
 
