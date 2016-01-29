@@ -28,7 +28,6 @@ public class Event {
 	
 	private int price;
 	
-	@Max(2000)
 	private	String description;
 	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)

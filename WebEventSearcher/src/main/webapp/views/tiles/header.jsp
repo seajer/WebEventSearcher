@@ -43,8 +43,8 @@
     			<a href="login">Login</a>
     			</sec:authorize>
     			</li>
+    			<sec:authentication property="name" />
     			<li><sec:authorize access="isAuthenticated()">
-				<%-- <sec:authentication property="name" /> --%>
 				<a href="logout">LogOut</a>
 				</sec:authorize></li>
 				<li><a href="about">About Us</a></li>

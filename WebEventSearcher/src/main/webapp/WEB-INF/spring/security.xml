@@ -28,9 +28,9 @@
 			</user-service>
 		</authentication-provider>
 	
-		<!-- <authentication-provider user-service-ref="userDetailsService">
+		<authentication-provider user-service-ref="userDetailsService">
 			<password-encoder ref="encoder"></password-encoder>
-		</authentication-provider> -->
+		</authentication-provider>
 	</authentication-manager>
 
 	<beans:import resource="classpath:/META-INF/appContext.xml" />
