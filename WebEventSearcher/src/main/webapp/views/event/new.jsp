@@ -37,6 +37,8 @@
 <br>
 	Name	<form:input path="name" title="Name"/><br>
 	<h6></h6>
+	Description <form:input path="description" title="Description"/><br>
+	<h6></h6>
 	Starts	<form:input path="eventStart" title="Start"  id="datepicker1"/><br>
 	<h6></h6>
 	Ends	<form:input path="eventEnd" title="Start" id="datepicker2"/><br>
@@ -44,11 +46,11 @@
 	Price	<form:input path="price" title="Price" /><br>
 	<h6></h6>
 	Type	<form:select path="eventType">
-        	<form:options items="${types}"/>	
+        	<form:options items="${types}" itemValue="id"/>	
      		</form:select>
     <br><h6></h6>
     Location<form:select path="location">
-       		<form:options items="${locations}"/>
+       		<form:options items="${locations}" itemValue="id"/>
 			</form:select>
 	<br><h6></h6>
 	<button type="submit">Save</button>	

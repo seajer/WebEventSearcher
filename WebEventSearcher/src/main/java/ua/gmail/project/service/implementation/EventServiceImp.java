@@ -1,5 +1,6 @@
 package ua.gmail.project.service.implementation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.gmail.project.dao.EntityDAO;
 import ua.gmail.project.dao.EventDAO;
+import ua.gmail.project.dto.EventDTO;
 import ua.gmail.project.entity.Event;
 import ua.gmail.project.service.EventService;
 
@@ -39,8 +41,22 @@ public class EventServiceImp implements EventService {
 	}
 	
 	@Transactional
-	public List<Event> findAll(){
-		return eventDao.findAll(Event.class);
+	public List<EventDTO> findAll(){
+		List<Event> list =  eventDao.findAll(Event.class);
+		List<EventDTO> listDTO = new ArrayList<EventDTO>();
+		for (Event event : list) {
+			listDTO.add(new EventDTO(
+					Integer.toString(event.getId()), 
+					event.getName(), 
+					event.getEventStart().toString(), 
+					event.getEventEnd().toString(), 
+					Integer.toString(event.getPrice()), 
+					event.getDescription(), 
+					event.getLocation().getName(),
+					event.getEventType().getTypeName()));
+		}
+		return listDTO;
+		
 	}
 
 	@Transactional

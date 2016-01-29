@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 //import javax.persistence.OneToOne;
+import javax.validation.constraints.Max;
 
 @Entity
 @Table
@@ -26,6 +27,9 @@ public class Event {
 	private Date eventEnd;
 	
 	private int price;
+	
+	@Max(2000)
+	private	String description;
 	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
 	private Location location;
@@ -104,6 +108,14 @@ public class Event {
 	public String toString() {
 		return "Event [name=" + name + ", eventStart=" + eventStart + ", eventEnd=" + eventEnd + ", price=" + price
 				+ "]";
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

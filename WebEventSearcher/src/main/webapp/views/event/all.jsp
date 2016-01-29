@@ -28,6 +28,9 @@
 			<th>Start</th>
 			<th>End</th>
 			<th>Price</th>
+			<th>Event Type</th>
+			<th>Location</th>
+			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -39,6 +42,7 @@
 				<td>${event.price}</td>
 				<td>${event.eventType}</td>
 				<td>${event.location}</td>
+				<td>${event.description}</td>
 				
 					<form:form action="editEvent" method="post">
 						<td>
