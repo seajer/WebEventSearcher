@@ -23,9 +23,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private VisitorDao visitorDao;
 	
-//	@Autowired
-//	 private BCryptPasswordEncoder encoder;
-	
 	@Transactional
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 		System.out.println("Oops!");
@@ -41,11 +38,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return new User(String.valueOf(visitor.getId()), visitor.getPassword(), authorities);
 }
 	
-//	@Transactional
-//	 public void add(User user) {
-//	  user.setPassword(encoder.encode(user.getPassword()));
-//	  userDAO.add(visitor);
-//	 }
+
+	
+
 	
 	
 }

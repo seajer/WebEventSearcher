@@ -14,9 +14,6 @@ public class EventDTO {
 	
 	private String id;
 	
-	
-
-
 	private String name;
 	
 	private String eventStart;
