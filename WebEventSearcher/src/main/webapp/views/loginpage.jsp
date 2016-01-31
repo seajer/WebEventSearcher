@@ -14,6 +14,8 @@
 		<input type="submit" value="Sign In">
 	</form>
 	
+	<p>Please, push a button below if you are not registered yet.</p>
 	<div class="signup"><a href="newVisitor">Sign Up</a></div>
+
 </body>
 </html>

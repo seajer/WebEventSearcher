@@ -19,7 +19,15 @@ public class VisitorServiceImpl implements VisitorService{
 	
 	@Autowired
 	 private BCryptPasswordEncoder encoder;
-
+	/*
+	 *   @Transactional
+    @Override
+    public Visitor registerNewUserAccount(VisitorDap visitorDao) throws LoginExistsException {
+        if (loginExist(visitorDao.getLogin())) {  
+            throw new LoginExistsException("There is an account with that login: " + 
+              visitorDao.getLogin());
+        }
+	 * */
 	@Transactional
 	 public void addVisitor(Visitor visitor) {
 	  visitor.setPassword(encoder.encode(visitor.getPassword()));
@@ -46,11 +54,22 @@ public class VisitorServiceImpl implements VisitorService{
 	}
 	
 	@Transactional
+	public Visitor getVisitorByLogin(String login) {
+		return visitorDao.findByLogin(login);
+	}
+	
+	@Transactional
 	public List<Visitor> getAllVisitors() {
 		return visitorDao.findAll(Visitor.class);
 	}
 
-
-
+    @SuppressWarnings("unused")
+	private boolean loginExist(String login) {
+        Visitor visitor = visitorDao.findByLogin(login);
+        if (visitor != null) {
+            return true;
+        }
+        return false;
+    }
 
 }

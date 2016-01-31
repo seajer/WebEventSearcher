@@ -34,7 +34,7 @@
 
 <div id="nav">
   	<ul>
-  		<li><a class="active" href="/EventSearcher">Home</a></li>
+  		<li><a class="active" href="/">Home</a></li>
   		<li><a href="events">Events</a></li>
 	 	<li><a href="types">Types</a></li>
 	 	<li><a href="locations">Locations</a></li>
@@ -42,8 +42,7 @@
     			<li><sec:authorize access="isAnonymous()">
     			<a href="login">Login</a>
     			</sec:authorize>
-    			</li>
-    			<sec:authentication property="name" />
+    			${Visitor}</li>
     			<li><sec:authorize access="isAuthenticated()">
 				<a href="logout">LogOut</a>
 				</sec:authorize></li>

@@ -14,8 +14,9 @@
 <form:form action="createVisitor" method="post" modelAttribute="visitor">
 	
 	Create login<form:input path="login" title="Login"/>
-	Create Password<form:input path="password" title="Password"/>
+	Create Password<form:input type="password" path="password" title="Password"/>
 	<input type="submit" value="Save"/>
+	
 </form:form>
 </body>
 </html>

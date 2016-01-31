@@ -16,6 +16,8 @@ public interface VisitorService {
 	
 	Visitor getVisitorById(int id);
 	
+	Visitor getVisitorByLogin(String login);
+	
 	List<Visitor> getAllVisitors();
 	
 

@@ -19,28 +19,22 @@ import ua.gmail.project.entity.Visitor;
 
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Autowired
 	private VisitorDao visitorDao;
-	
+
 	@Transactional
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 		System.out.println("Oops!");
 		Visitor visitor = null;
 		try {
 			visitor = visitorDao.findByLogin(login);
+		} catch (NoResultException e) {
+			return null;
 		}
-		catch (NoResultException e) {
-		return null;
-	}
 		Collection<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		return new User(String.valueOf(visitor.getId()), visitor.getPassword(), authorities);
-}
-	
+	}
 
-	
-
-	
-	
 }
