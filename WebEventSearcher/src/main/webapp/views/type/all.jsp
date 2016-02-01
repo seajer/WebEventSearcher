@@ -36,7 +36,7 @@
 					<form:form action="editType" method="post">
 						<td>
 							<input type="hidden" name="id" value="${type.id}">
-							<sec:authorize access="hasRole('ADMIN')">
+							<sec:authorize access="hasRole('ROLE_ADMIN')">
 								<input type="submit" name="operation" value="edit" />
 							</sec:authorize>
 						</td>
@@ -44,7 +44,7 @@
 					<form:form action="deleteType" method="post">
 						<td>
 							<input type="hidden" name="id" value="${type.id}">
-							<sec:authorize access="hasRole('ADMIN')">
+							<sec:authorize access="hasRole('ROLE_ADMIN')">
 								<input type="submit" name="operation" value="delete" />
 							</sec:authorize>
 						</td>

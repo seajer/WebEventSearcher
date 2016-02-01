@@ -47,7 +47,7 @@
 					<form:form action="editEvent" method="post">
 						<td>
 							<input type="hidden" name="id" value="${event.id}">
-							<sec:authorize access="hasRole('ADMIN')">
+							<sec:authorize access="hasRole('ROLE_ADMIN')">
 								<input type="submit" name="operation" value="edit" />
 							</sec:authorize>
 						</td>
@@ -55,7 +55,7 @@
 					<form:form action="deleteEvent" method="post">
 						<td>
 							<input type="hidden" name="id" value="${event.id}">
-							<sec:authorize access="hasRole('ADMIN')">
+							<sec:authorize access="hasRole('ROLE_ADMIN')">
 								<input type="submit" name="operation" value="delete" />
 							</sec:authorize>
 						</td>

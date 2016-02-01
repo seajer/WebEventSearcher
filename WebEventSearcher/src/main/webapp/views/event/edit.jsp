@@ -28,8 +28,9 @@
 </head>
 <body>
 
-<form:form action="updateEvent" method="post" modelAttribute="event">
-	<br>
+<form:form action="updateEvent" method="post" modelAttribute="event"  >
+<br>
+	<form:input path="id" type="hidden"/>
 	Name	<form:input path="name" title="Name"/><br>
 	<h6></h6>
 	Description <form:input path="description" title="Description"/><br>
@@ -47,7 +48,6 @@
     Location<form:select path="location">
        		<form:options items="${locations}" itemValue="id"/>
 			</form:select>
-
 	<br><h6></h6>
 	<button type="submit">Save</button>	
 </form:form>

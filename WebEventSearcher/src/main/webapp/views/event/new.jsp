@@ -35,6 +35,7 @@
 
 <form:form action="createEvent" method="post" modelAttribute="event" enctype="multipart/form-data" >
 <br>
+	
 	Name	<form:input path="name" title="Name"/><br>
 	<h6></h6>
 	Description <form:input path="description" title="Description"/><br>

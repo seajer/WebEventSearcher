@@ -3,6 +3,7 @@ package ua.gmail.project.service.implementation;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,7 +62,12 @@ public class EventServiceImp implements EventService {
 
 	@Transactional
 	public Event findById(String id) {
-		return eventDao.findByKey(Event.class, Integer.parseInt(id));
+		Event event =eventDao.findByKey(Event.class, Integer.parseInt(id));
+		if(event!=null){
+			Hibernate.initialize(event.getEventType());
+			Hibernate.initialize(event.getLocation());
+		}
+		return event; 
 		
 	}
 	

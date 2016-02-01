@@ -60,9 +60,9 @@ public class EventController {
 		return "event-edit";
 	}
 
-	@RequestMapping(value = "/updateEvent")
+	@RequestMapping(value = "/updateEvent", method = RequestMethod.POST)
 	public String updateEvent(
-			@ModelAttribute(value = "event") Event event){
+			@ModelAttribute(value = "event") @Valid Event event){
 		eventService.update(event);
 		return "redirect:/events";
 	}
