@@ -41,7 +41,7 @@
 	<h6></h6>
 	Starts	<form:input path="eventStart" title="Start"  id="datepicker1"/><br>
 	<h6></h6>
-	Ends	<form:input path="eventEnd" title="Start" id="datepicker2"/><br>
+	Ends	<form:input path="eventEnd" title="End" id="datepicker2"/><br>
 	<h6></h6>
 	Price	<form:input path="price" title="Price" /><br>
 	<h6></h6>
