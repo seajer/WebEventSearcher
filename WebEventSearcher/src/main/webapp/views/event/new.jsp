@@ -7,27 +7,9 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EventSearcher</title>
-
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
- 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
- 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
  	<link rel="stylesheet" href="/resources/demos/style.css">
  	
-  <script>
-  $(function() {
-	  $("#datepicker1").datepicker({
-		    minDate: "0",			
-		    maxDate: "+1m +1w +3d"  
-		});
-    
-  });
-  $(function() {
-	  $("#datepicker2").datepicker({
-		    minDate: "1",			
-		    maxDate: "+1m +1w +4d"  
-		});
-	  });
-  </script>
+ 	<link rel="stylesheet" type="text/css" href="resources/css/jquery.datetimepicker.css"/>
 
 </head>
 
@@ -35,14 +17,13 @@
 
 <form:form action="createEvent" method="post" modelAttribute="event" enctype="multipart/form-data" >
 <br>
-	
 	Name	<form:input path="name" title="Name"/><br>
 	<h6></h6>
 	Description <form:input path="description" title="Description"/><br>
 	<h6></h6>
-	Starts	<form:input path="eventStart" title="Start"  id="datepicker1"/><br>
+	Starts	<form:input path="eventStart" title="Start"  id="datetimepicker1"/><br>
 	<h6></h6>
-	Ends	<form:input path="eventEnd" title="End" id="datepicker2"/><br>
+	Ends	<form:input path="eventEnd" title="End" id="datetimepicker2"/><br>
 	<h6></h6>
 	Price	<form:input path="price" title="Price" /><br>
 	<h6></h6>
@@ -58,4 +39,24 @@
 </form:form>
 
 </body>
+<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/jquery.datetimepicker.full.js"></script>
+	<script>
+		$('#datetimepicker1').datetimepicker({
+		dayOfWeekStart : 1,
+		lang:'en',
+		startDate:	'2016/01/05'
+		});
+		$('#datetimepicker1').datetimepicker({value:'2016/02/01 10:30',step:60});
+	</script>
+	<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/jquery.datetimepicker.full.js"></script>
+	<script>
+		$('#datetimepicker2').datetimepicker({
+		dayOfWeekStart : 1,
+		lang:'en',
+		startDate:	'2016/01/05'
+		});
+		$('#datetimepicker2').datetimepicker({value:'2016/02/01 11:30',step:60});
+	</script>
 </html>

@@ -24,7 +24,7 @@ public class HomeController {
 		  	try {
 		session.setAttribute("Visitor", visitorService.getVisitorById(Integer.parseInt(principal.getName())).getLogin());
 		  } catch (Exception e) {
-		   System.out.println("No authentication.");
+//		   System.out.println("No authentication.");
 		  }
 		  return "home";
 		 }
