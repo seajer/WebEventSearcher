@@ -13,6 +13,7 @@
 <form:form action="createType" method="post" modelAttribute="type">
 	
 	Name<form:input path="typeName" title="Name"/>
+	Image URL<form:input path="imageUrl" title="Image"/>
 	<input type="submit" value="Save Type"/>
 </form:form>
 

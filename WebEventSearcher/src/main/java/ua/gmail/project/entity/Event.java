@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 //import javax.persistence.OneToOne;
-import javax.validation.constraints.Max;
+
 
 @Entity
 @Table
@@ -30,6 +30,8 @@ public class Event {
 	
 	private	String description;
 	
+	private String imageUrl;
+	
 	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)
 	private Location location;
 	
@@ -39,12 +41,14 @@ public class Event {
 	public Event(){	
 	}
 
-	public Event(String name, Date eventStart, Date eventEnd, int price) {
+	public Event(String name, Date eventStart, Date eventEnd, int price, String description, String imageUrl) {
 		super();
 		this.name = name;
 		this.eventStart = eventStart;
 		this.eventEnd = eventEnd;
 		this.price = price;
+		this.description = description;
+		this.imageUrl = imageUrl;
 	}
 
 	public int getId() {
@@ -115,6 +119,14 @@ public class Event {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	
 }

@@ -13,6 +13,7 @@
  <form:form action="updateType" method="post" modelAttribute="type">
  		<form:input path="id" type="hidden"/>
 		<form:input path="typeName"/>
+		<form:input path="imageUrl"/>
 		<input type="submit" value="Save Changes"/>
 </form:form>
 

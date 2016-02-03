@@ -27,6 +27,8 @@
 	<h6></h6>
 	Price	<form:input path="price" title="Price" /><br>
 	<h6></h6>
+	Image URL<form:input path="imageUrl" title="Image"/><br>
+	<h6></h6>
 	Type	<form:select path="eventType">
         	<form:options items="${types}" itemValue="id"/>	
      		</form:select>
@@ -34,7 +36,7 @@
     Location<form:select path="location">
        		<form:options items="${locations}" itemValue="id"/>
 			</form:select>
-	<br><h6></h6>
+<br><h6></h6>
 	<button type="submit">Save</button>	
 </form:form>
 

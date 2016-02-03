@@ -26,12 +26,14 @@
 	<thead>
 		<tr>
 			<th> Name</th>
+			<th>Image</th>
 		</tr>
 	</thead>
 	<tbody>
 		<c:forEach var="type" items="${types}">
 			<tr>
 				<td>${type.typeName}</td>
+				<td><img src="${type.imageUrl}" class="typeImage"></img></td>
 				
 					<form:form action="editType" method="post">
 						<td>
@@ -54,9 +56,6 @@
 		</c:forEach>
 	</tbody>
 </table>
-<!-- <sec:authorize access="hasRole('ADMIN')">
-	<a href="createNewEventType">Add new type of Event</a>
-</sec:authorize> -->
 
 <script>
 

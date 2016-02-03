@@ -9,7 +9,7 @@
 </head>
 <body>
 		<div id="footer">
-		Copyright © 2016 <a href="https://www.java.com/en/download/">EventSearcher v0.1</a> | coded by allStarsTeam
+		Copyright © 2016 <a href="https://www.java.com/en/download/">EventSearcher v1.1</a> | coded by allStarsTeam
        </div>
 </body>
 </html>

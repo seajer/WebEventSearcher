@@ -17,15 +17,25 @@ public class EventTypeServiceImp implements EventTypeService{
 	private EventTypeDao eventTypeDao;
 
 	@Transactional
-	public void addEventType(String typeName) {
-		if(typeName != null){
-			EventType eventType = new EventType(typeName);
+	public void addEventType(EventType eventType) {
+		if(eventType != null){
 			eventTypeDao.add(eventType);
 		}else{
-			System.out.println("Name of EventType is empty.");
+			System.out.println("Fields of EventType are empty.");
 		}
-		
 	}
+	
+//	@Transactional
+//	public void addTypeImage(String imageUrl) {
+//		if(imageUrl != null){
+//			EventType eventType = new EventType(imageUrl);
+//			eventTypeDao.add(eventType);
+//		}else{
+//			System.out.println("Image of EventType is empty.");
+//		}
+//		
+//	}
+	
 	@Transactional
 	public void updateEventType(EventType eventType) {
 		eventTypeDao.update(eventType);
@@ -52,5 +62,5 @@ public class EventTypeServiceImp implements EventTypeService{
 	public List<EventType> getAllEventTypes() {
 		return eventTypeDao.findAll(EventType.class);
 	}
-
+	
 }

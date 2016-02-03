@@ -15,6 +15,7 @@ import javax.persistence.*;
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String typeName;
+	private String imageUrl;
 	@OneToMany(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY , mappedBy="eventType")
 	private List<Event> events;
 	
@@ -22,9 +23,10 @@ import javax.persistence.*;
 	public EventType() {
 	}
 
-	public EventType(String typeName) {
+	public EventType(String typeName, String imageUrl) {
 		super();
 		this.typeName = typeName;
+		this.imageUrl = imageUrl;
 	}
 
 	public int getId() {
@@ -55,5 +57,13 @@ import javax.persistence.*;
 	public String toString() {
 		return typeName;
 		}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	
 }

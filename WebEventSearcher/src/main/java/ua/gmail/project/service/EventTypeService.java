@@ -8,8 +8,8 @@ import ua.gmail.project.entity.EventType;
 
 public interface EventTypeService {
 	
-	void addEventType(String typeName);
-	
+	void addEventType(EventType eventType);
+		
 	void updateEventType (EventType eventType);
 	
 	void removeEventType (String id);

@@ -24,13 +24,14 @@ public class EventDTO {
 	
 	private	String description;
 	
+	private String imageUrl;
 	
 	private String location;
 	
-	
 	private String eventType;
 	
-	public EventDTO(String id, String name, String eventStart, String eventEnd, String price, String description,
+	
+	public EventDTO(String id, String name, String eventStart, String eventEnd, String price, String description, String imageUrl,
 			String location, String eventType) {
 		super();
 		this.id = id;
@@ -39,6 +40,7 @@ public class EventDTO {
 		this.eventEnd = eventEnd;
 		this.price = price;
 		this.description = description;
+		this.imageUrl = imageUrl;
 		this.location = location;
 		this.eventType = eventType;
 	}
@@ -105,6 +107,14 @@ public class EventDTO {
 
 	public void setEventType(String eventType) {
 		this.eventType = eventType;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	
 	

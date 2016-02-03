@@ -25,6 +25,7 @@
 	<thead>
 		<tr>
 			<th>Name</th>
+			<th>Image</th>
 			<th>Start</th>
 			<th>End</th>
 			<th>Price</th>
@@ -33,10 +34,13 @@
 			<th>Description</th>
 		</tr>
 	</thead>
+	
 	<tbody>
+	
 		<c:forEach var="event" items="${events}">
 			<tr>
 				<td>${event.name}</td>
+				<td><img src="${event.imageUrl}" class="eventImage"></img></td>
 				<td>${event.eventStart}</td>
 				<td>${event.eventEnd}</td>
 				<td>${event.price}</td>

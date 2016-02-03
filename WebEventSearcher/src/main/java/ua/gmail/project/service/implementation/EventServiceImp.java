@@ -2,12 +2,10 @@ package ua.gmail.project.service.implementation;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import ua.gmail.project.dao.EntityDAO;
 import ua.gmail.project.dao.EventDAO;
 import ua.gmail.project.dto.EventDTO;
@@ -52,6 +50,7 @@ public class EventServiceImp implements EventService {
 					event.getEventStart().toString(), 
 					event.getEventEnd().toString(), 
 					Integer.toString(event.getPrice()), 
+					event.getImageUrl(), 
 					event.getDescription(), 
 					event.getLocation().getName(),
 					event.getEventType().getTypeName()));
@@ -70,5 +69,6 @@ public class EventServiceImp implements EventService {
 		return event; 
 		
 	}
+	
 	
 }

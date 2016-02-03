@@ -33,6 +33,7 @@
        		<form:options items="${locations}" itemValue="id"/>
 			</form:select>
 	<br><h6></h6>
+	ImageUrl<form:input path="imageUrl"/><br>
 	<button type="submit">Save</button>	
 </form:form>
 
