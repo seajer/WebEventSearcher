@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,15 +12,18 @@
 </head>
 <body>
 
-<form:form action="updateEvent" method="post" modelAttribute="event" enctype="multipart/form-data" >
+<form:form action="updateEvent" method="post" modelAttribute="event">
+	<fmt:formatDate value="${event.eventStart}" pattern="yyyy/MM/dd hh:mm" var="fbeginDate"/>
+	<fmt:formatDate value="${event.eventEnd}" pattern="yyyy/MM/dd hh:mm" var="fendDate"/>
 <br>
+	<form:input path="id" type="hidden"/>
 	Name	<form:input path="name" title="Name"/><br>
 	<h6></h6>
 	Description <form:input path="description" title="Description"/><br>
 	<h6></h6>
-	Starts	<form:input path="eventStart" title="Start"  id="datetimepicker1"/><br>
+	Starts	<form:input path="eventStart" title="Start" value ="${fbeginDate}" id="datetimepicker1"/><br>
 	<h6></h6>
-	Ends	<form:input path="eventEnd" title="End" id="datetimepicker2"/><br>
+	Ends	<form:input path="eventEnd" title="End" value ="${fendDate}" id="datetimepicker2"/><br>
 	<h6></h6>
 	Price	<form:input path="price" title="Price" /><br>
 	<h6></h6>
