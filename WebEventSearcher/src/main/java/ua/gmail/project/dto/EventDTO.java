@@ -1,14 +1,5 @@
 package ua.gmail.project.dto;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-
-import ua.gmail.project.entity.EventType;
-import ua.gmail.project.entity.Location;
-
 public class EventDTO {
 
 	
@@ -36,8 +27,8 @@ public class EventDTO {
 		super();
 		this.id = id;
 		this.name = name;
-		this.eventStart = eventStart;
-		this.eventEnd = eventEnd;
+		this.eventStart = parseData(eventStart);
+		this.eventEnd = parseData(eventEnd);
 		this.price = price;
 		this.description = description;
 		this.imageUrl = imageUrl;
@@ -117,5 +108,21 @@ public class EventDTO {
 		this.imageUrl = imageUrl;
 	}
 	
-	
+	public String parseData(String data){
+		String[] dateTime = data.split(" ");
+		String[] date = dateTime[0].split("-");
+		String newData = null;
+		if(date[1].equals("01")){newData = "January";}	if(date[1].equals("02")){newData = "February";}
+		if(date[1].equals("03")){newData = "March";}	if(date[1].equals("04")){newData = "April";}
+		if(date[1].equals("05")){newData = "May";}		if(date[1].equals("06")){newData = "June";}
+		if(date[1].equals("07")){newData = "July";}		if(date[1].equals("08")){newData = "August";}
+		if(date[1].equals("09")){newData = "September";}if(date[1].equals("10")){newData = "October";}
+		if(date[1].equals("11")){newData = "November";}	if(date[1].equals("12")){newData = "December";}
+		newData = newData + " " + date[2].replace("0", "");
+		String[] time = dateTime[1].split(":");
+		String newTime = time[0] + ":" + time[1];
+		String newDataTime = newData + " " + newTime;
+//		return newTime;
+		return newDataTime;
+	}
 }
