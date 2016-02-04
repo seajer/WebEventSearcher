@@ -13,8 +13,8 @@
 <body>
 
 <form:form action="updateEvent" method="post" modelAttribute="event">
-	<fmt:formatDate value="${event.eventStart}" pattern="yyyy/MM/dd hh:mm" var="fbeginDate"/>
-	<fmt:formatDate value="${event.eventEnd}" pattern="yyyy/MM/dd hh:mm" var="fendDate"/>
+	<fmt:formatDate value="${event.eventStart}" pattern="yyyy/MM/dd H:M" var="fbeginDate"/>
+	<fmt:formatDate value="${event.eventEnd}" pattern="yyyy/MM/dd H:M" var="fendDate"/>
 <br>
 	<form:input path="id" type="hidden"/>
 	Name	<form:input path="name" title="Name"/><br>
