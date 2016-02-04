@@ -10,9 +10,9 @@ public class DateParse {
 			String[] mdy = dateTime[0].split("/");
 			String[] hm = dateTime[1].split(":");
 			return new Date(
-					Integer.parseInt(mdy[2])-53,
-					Integer.parseInt(mdy[0]),
-					Integer.parseInt(mdy[1]),
+					Integer.parseInt(mdy[0])-1900,
+					Integer.parseInt(mdy[1])-1,
+					Integer.parseInt(mdy[2]),
 					Integer.parseInt(hm[0]),
 					Integer.parseInt(hm[1]));
 		}
