@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,14 +8,36 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="loginprocessing" method="post">
-		Login <input type="text" name="username">
-		Password <input type="password" name="password">
-		<input type="submit" value="Sign In">
+	<br>
+	<h4>Log In or Sign Up, below.</h4>
+	<form class="form-inline" action="loginprocessing" method="post">
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-user"></i>
+				</div>
+				<input type="text" name="username" class="form-control" id="login"
+					placeholder="Your Login">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-key"></i>
+				</div>
+				<input type="password" name="password" class="form-control"
+					id="password" placeholder="Password">
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-default">Sign In</button>
+
 	</form>
-	
-	<p>Please, push a button below if you are not registered yet.</p>
-	<div class="signup"><a href="newVisitor">Sign Up</a></div>
+	<br>
+	<div id="signup" class="btn btn-default">
+		<a href="newVisitor">Sign Up</a>
+	</div>
 
 </body>
 </html>

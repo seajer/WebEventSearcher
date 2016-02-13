@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html>
@@ -7,58 +7,127 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>EventSearcher</title>
- 	<link rel="stylesheet" href="/resources/demos/style.css">
- 	
- 	<link rel="stylesheet" type="text/css" href="resources/css/jquery.datetimepicker.css"/>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+<link rel="stylesheet" type="text/css"
+	href="resources/css/jquery.datetimepicker.css" />
 
 </head>
 
 <body>
 
-<form:form action="createEvent" method="post" modelAttribute="event" enctype="multipart/form-data" >
-<br>
-	Name	<form:input path="name" title="Name"/><br>
-	<h6></h6>
-	Description <form:input path="description" title="Description"/><br>
-	<h6></h6>
-	Starts	<form:input path="eventStart" title="Start"  id="datetimepicker1"/><br>
-	<h6></h6>
-	Ends	<form:input path="eventEnd" title="End" id="datetimepicker2"/><br>
-	<h6></h6>
-	Price	<form:input path="price" title="Price" /><br>
-	<h6></h6>
-	Image URL<form:input path="imageUrl" title="Image"/><br>
-	<h6></h6>
-	Type	<form:select path="eventType">
-        	<form:options items="${types}" itemValue="id"/>	
-     		</form:select>
-    <br><h6></h6>
-    Location<form:select path="location">
-       		<form:options items="${locations}" itemValue="id"/>
-			</form:select>
-<br><h6></h6>
-	<button type="submit">Save</button>	
-</form:form>
+	<br>
+	<h4>Fill the form for adding new Event.</h4>
 
-</body>
-<script src="resources/js/jquery.js"></script>
+	<form:form class="form-inline" action="createEvent" method="post"
+		modelAttribute="event" enctype="multipart/form-data">
+<div class="row">
+		<div class="form-group col-sm-10">
+				<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-keyboard-o"></i>
+				</div>
+				<form:input path="name" title="Name" class="form-control"
+					placeholder="Event Name" />
+				</div>
+		</div>
+</div>
+
+		<div class="row">
+			<div class="input-group">
+			<span class="input-group-addon"><i class="fa fa-calendar"></i>
+				Start</span>
+			<form:input path="eventStart" title="Start" id="datetimepicker1"
+				class="form-control" placeholder="Date & Time" />
+			</div>
+		</div>
+		<br>
+
+		<h6></h6>
+		<div class="input-group">
+			<span class="input-group-addon"><i class="fa fa-calendar"></i>
+				End</span>
+			<form:input path="eventEnd" title="End" id="datetimepicker2"
+				class="form-control" placeholder="Date & Time" />
+		</div>
+		<br>
+		<h6></h6>
+
+
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-keyboard-o"></i>
+				</div>
+				<form:input path="price" title="Price" class="form-control"
+					placeholder="Price"/> 
+			</div>
+		</div>
+		<br>
+		<h6></h6>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">
+					<i class="fa fa-picture-o"></i>
+				</div>
+				<form:input path="imageUrl" title="Image" class="form-control"
+					placeholder="Copy image URL here" />
+			</div>
+		</div>
+		<br>
+		<h6></h6>
+
+		<div class="input-group">
+			<span class="input-group-addon">Type</span>
+			<form:select path="eventType" class="form-control">
+				<form:options items="${types}" itemValue="id" />
+			</form:select>
+		</div>
+		<br>
+		<h6></h6>
+		<div class="input-group">
+			<span class="input-group-addon">Location</span>
+			<form:select path="location" class="form-control">
+
+				<form:options items="${locations}" itemValue="id" />
+			</form:select>
+		</div>
+		<br>
+		<h6></h6>
+		<div class="form-group">
+			
+			<form:textarea path="description" title="Description" class="form-control" placeholder="Enter event Description" rows="5" cols="30"/>
+			
+		</div>
+		<h6></h6>
+		<button type="submit" class="btn btn-default">Save</button>
+	</form:form>
+
+	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/jquery.datetimepicker.full.js"></script>
 	<script>
 		$('#datetimepicker1').datetimepicker({
-		dayOfWeekStart : 1,
-		lang:'en'
-		
+			dayOfWeekStart : 1,
+			lang : 'en'
+
 		});
-		$('#datetimepicker1').datetimepicker({step:60});
+		$('#datetimepicker1').datetimepicker({
+			step : 60
+		});
 	</script>
 	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/jquery.datetimepicker.full.js"></script>
 	<script>
 		$('#datetimepicker2').datetimepicker({
-		dayOfWeekStart : 1,
-		lang:'en'
-		
+			dayOfWeekStart : 1,
+			lang : 'en'
+
 		});
-		$('#datetimepicker2').datetimepicker({step:60});
+		$('#datetimepicker2').datetimepicker({
+			step : 60
+		});
 	</script>
+
+</body>
+
 </html>

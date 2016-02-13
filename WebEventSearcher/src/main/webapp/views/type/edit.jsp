@@ -8,7 +8,8 @@
 <title>EventSearcher</title>
 </head>
 <body>
-
+	<br>
+	<h4></h4>
 
  <form:form action="updateType" method="post" modelAttribute="type">
  		<form:input path="id" type="hidden"/>

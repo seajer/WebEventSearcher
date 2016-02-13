@@ -49,9 +49,9 @@ public class EventServiceImp implements EventService {
 					event.getName(), 
 					event.getEventStart().toString(), 
 					event.getEventEnd().toString(), 
-					Integer.toString(event.getPrice()), 
-					event.getImageUrl(), 
+					Integer.toString(event.getPrice()),
 					event.getDescription(), 
+					event.getImageUrl(), 
 					event.getLocation().getName(),
 					event.getEventType().getTypeName()));
 		}

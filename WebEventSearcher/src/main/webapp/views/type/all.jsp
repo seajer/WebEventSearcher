@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<table>
+<table class="table table-hover" id="tableType">
 
 	<thead>
 		<tr>

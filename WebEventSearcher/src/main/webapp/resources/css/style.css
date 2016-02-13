@@ -148,7 +148,7 @@ width: 200px;
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-.signup{
+#signup{
 	width: 65px; height: 40px;
 	line-height: 40px;
 	color: white;
@@ -158,8 +158,13 @@ width: 200px;
 	overflow: hidden;
     border: 1px solid #e7e7e7;
 }
-.signup a{
+#signup a{
 	text-decoration: none;
 	color: white;
 	display: block;
+}
+
+#tableType > tbody > tr:hover, #tableLocation > tbody > tr:hover, #tableEvent > tbody > tr:hover
+{
+background-color: #494949;
 }
